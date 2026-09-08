@@ -1,0 +1,41 @@
+# =========================================================================
+# Visual C++ 6.0 Build & Intermediate Files
+# =========================================================================
+
+# Build Directories
+Debug/
+Release/
+debug/
+release/
+
+#     .ilc
+_copy_.ilc
+
+# VC6 Workspace & Project User Options / Database
+*.ncb
+*.opt
+*.aps
+*.plg
+
+# Intermediate / Object Files
+*.obj
+*.sbr
+*.idb
+*.pdb
+*.pch
+*.res
+*.bsc
+
+# Output Files (Executable & Libraries)
+*.exe
+*.dll
+*.lib
+*.exp
+
+# Map & Log Files
+*.map
+*.log
+
+# Windows System Files
+Thumbs.db
+Desktop.ini
