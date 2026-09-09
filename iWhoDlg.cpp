@@ -3,7 +3,7 @@
 //  @brief      CIWhoDlg ダイアログクラス インプリメンテーションファイル
 //
 //  @author     Iwao ( https://mish.work/ )
-//  @date       2026-09-08
+//  @date       2026-09-09
 //
 //  @modify
 //  2026-09-08  Newly created by AI assistant
@@ -16,6 +16,7 @@
 // **************************************************************************
 
 #include "stdafx.h"
+#pragma warning(disable: 4786)
 #include "iWho.h"
 #include "iWhoDlg.h"
 

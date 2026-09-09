@@ -50,7 +50,7 @@ BOOL CIWhoApp::InitInstance()
 
 	CIWhoDlg dlg;
 	m_pMainWnd = &dlg;
-	int nResponse = dlg.DoModal();
+	INT_PTR	nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
 	{
 		// TODO: ダイアログが <OK> で消された時のコードを

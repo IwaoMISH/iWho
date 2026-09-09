@@ -3,7 +3,7 @@
 //  @brief      GeoIP 情報の保持およびプライベート IP 判定モジュール (VC6/C++98 互換)
 //
 //  @author     Iwao ( https://mish.work/ )
-//  @date       2026-09-07
+//  @date       2026-09-08
 //
 //  @modify
 //  2026-09-07  Newly created by AI assistant
@@ -89,8 +89,14 @@ inline bool IsPrivateIP(LPCTSTR lpszIP)
 
 	// 172.16.0.0 ~ 172.31.255.255
 	if (strIP.find(_T("172.")) == 0) {
-		int nSecond = 0;
-		if (::_stscanf(strIP.c_str(), _T("172.%d."), &nSecond) == 1) {
+		int	nSecond = 0;
+		int	f_count = 0 ;
+		#if(_MSC_VER >= 1400)
+			f_count = ::_stscanf_s(strIP.c_str(), _T("172.%d."), &nSecond) ;
+		#else
+			f_count = ::_stscanf  (strIP.c_str(), _T("172.%d."), &nSecond) ;
+		#endif
+		if (f_count == 1) {
 			if (nSecond >= 16 && nSecond <= 31) {
 				return true;
 			}
