@@ -1,6 +1,6 @@
 # iWho
 
-Win32 GUI ログ解析・GeoIP 検索ツール
+Win32 GUI GeoIP 検索ツール
 
 
 ## 概要
