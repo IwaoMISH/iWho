@@ -177,15 +177,15 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\..\..\1998\T_whois\iWho\iWho.cpp"
+				RelativePath=".\iWho.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\1998\T_whois\iWho\iWhoDlg.cpp"
+				RelativePath=".\iWhoDlg.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\1998\T_whois\iWho\StdAfx.cpp"
+				RelativePath=".\StdAfx.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -211,19 +211,19 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath="..\..\..\1998\T_whois\iWho\iWho.h"
+				RelativePath=".\iWho.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\1998\T_whois\iWho\iWhoDlg.h"
+				RelativePath=".\iWhoDlg.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\1998\T_whois\iWho\resource.h"
+				RelativePath=".\resource.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\1998\T_whois\iWho\StdAfx.h"
+				RelativePath=".\StdAfx.h"
 				>
 			</File>
 		</Filter>
@@ -233,7 +233,7 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 			<File
-				RelativePath="..\..\..\1998\T_whois\iWho\iWho.rc"
+				RelativePath=".\iWho.rc"
 				>
 			</File>
 		</Filter>

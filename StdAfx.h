@@ -12,6 +12,10 @@
 
 #define VC_EXTRALEAN		// Windows ヘッダーから殆ど使用されないスタッフを除外します。
 
+#ifndef _WINSOCK_DEPRECATED_NO_WARNINGS
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
+#endif
+
 #include <afxwin.h>         // MFC のコアおよび標準コンポーネント
 #include <afxext.h>         // MFC の拡張部分
 #include <afxdisp.h>        // MFC のオートメーション クラス
