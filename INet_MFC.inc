@@ -7,6 +7,7 @@
 //
 //  @modify
 //  2026-09-07  新規作成
+//  2026-09-16  ::IN_GetFile 修正
 //
 //  @disclaimer
 //  本コードの使用により生じたいかなる損害についても著作者は責任を負いません
@@ -134,6 +135,7 @@ inline bool IN_GetText(LPCTSTR lpszUrl, tstring& strResponse)
 // **************************************************************************
 //  URL からレスポンスをファイルへ保存する
 //  作成日    :    2026-09-07
+//  変更日    :    2026-09-16	_UNICODE 時の出力ファイル名のバグ
 // **************************************************************************
 inline bool IN_GetFile(LPCTSTR lpszUrl, LPCTSTR lpszFilePath)
 {
@@ -148,9 +150,9 @@ inline bool IN_GetFile(LPCTSTR lpszUrl, LPCTSTR lpszFilePath)
 
 	// ANSI 文字列に変換してファイルへ書き出し
 	#ifdef _UNICODE
-		int nLen = ::WideCharToMultiByte(CP_ACP, 0, strResponse.c_str(), -1, NULL, 0, NULL, NULL);
+		int nLen =	::WideCharToMultiByte(CP_ACP, 0, lpszFilePath, -1, NULL, 0, NULL, NULL);
 		std::vector<char> vBuffer(nLen);
-		::WideCharToMultiByte(CP_ACP, 0, strResponse.c_str(), -1, &vBuffer[0], nLen, NULL, NULL);
+					::WideCharToMultiByte(CP_ACP, 0, lpszFilePath, -1, &vBuffer[0], nLen, NULL, NULL);
 		std::ofstream ofs(vBuffer.empty() ? "" : &vBuffer[0], std::ios::out | std::ios::binary | std::ios::trunc);
 	#else
 		std::ofstream ofs(lpszFilePath, std::ios::out | std::ios::binary | std::ios::trunc);
@@ -161,10 +163,10 @@ inline bool IN_GetFile(LPCTSTR lpszUrl, LPCTSTR lpszFilePath)
 	}
 
 	#ifdef _UNICODE
-		int nMbLen = ::WideCharToMultiByte(CP_UTF8, 0, strResponse.c_str(), -1, NULL, 0, NULL, NULL);
+		int nMbLen =::WideCharToMultiByte(CP_UTF8, 0, strResponse.c_str(), -1, NULL, 0, NULL, NULL);
 		if (nMbLen > 0) {
 			std::vector<char> utf8Buf(nMbLen);
-			::WideCharToMultiByte(CP_UTF8, 0, strResponse.c_str(), -1, &utf8Buf[0], nMbLen, NULL, NULL);
+					::WideCharToMultiByte(CP_UTF8, 0, strResponse.c_str(), -1, &utf8Buf[0], nMbLen, NULL, NULL);
 			ofs.write(&utf8Buf[0], nMbLen - 1);
 		}
 	#else
